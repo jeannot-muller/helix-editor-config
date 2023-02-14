@@ -1,0 +1,26 @@
+[[language]]
+name = "rust"
+auto-format = true
+formatter = { command = "rustfmt", args = ["+nightly", "--emit=stdout"]}
+
+[language.config]
+checkOnSave = { command = "clippy" }
+rustfmt.extraArgs = ["+nightly"]
+
+[[language]]
+name = "vue"
+auto-format = true
+file-types = ["vue"]
+injection-regex = "vue"
+language-server = { command = "vue-language-server", args = ["--stdio"] }
+roots = ["package.json"]
+scope = "text.html.vue"
+
+[language.config.typescript]
+tsdk = "/usr/local/lib/node_modules/typescript/lib"
+
+[[language]]
+name = "typescript"
+auto-format = true
+config = { format = { "semicolons" = "insert", "insertSpaceBeforeFunctionParenthesis" = true } }
+

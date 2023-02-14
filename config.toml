@@ -1,0 +1,60 @@
+theme = "rose_pine_moon"
+
+[editor]
+auto-save = true
+bufferline = "multiple"
+cursorline = true
+gutters = ["diagnostics", "spacer", "line-numbers", "spacer", "diff"]
+line-number = "relative"
+mouse = false
+true-color = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+
+[editor.lsp]
+display-messages = true
+
+[editor.statusline]
+center = ["file-name", "total-line-numbers"]
+left = ["mode", "spinner"]
+mode.insert = "INSERT"
+mode.normal = "NORMAL"
+mode.select = "SELECT"
+right = [
+  "diagnostics",
+  "selections",
+  "position",
+  "file-encoding",
+  "file-line-ending",
+  "file-type",
+]
+separator = "│"
+
+[keys.normal]
+X = "extend_line_above"
+esc = ["collapse_selection", "keep_primary_selection"]
+ret = ["move_line_down", "goto_line_start"]
+";" = ["goto_line_end", ":append-output printf ';'", "normal_mode"]
+
+[keys.normal.g]
+q = ":reflow"
+
+[keys.normal.space]
+"?" = "no_op"
+"ß" = "command_palette"
+S = ":pipe sort"
+U = ":pipe uniq"
+h = ":hsplit-new"
+n = ":new"
+q = ":quit"
+v = ":vsplit-new"
+w = ":write"
